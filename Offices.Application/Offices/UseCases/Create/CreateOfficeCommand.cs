@@ -1,11 +1,10 @@
 ﻿using MediatR;
-using Offices.Core.Models;
+using Offices.Application.Offices.Models;
 
-namespace Offices.Application.Commands.OfficeCommands.Update;
+namespace Offices.Application.Offices.UseCases.Create;
 
-public sealed class UpdateOfficeCommand : IRequest<OfficeEntity>
+public class CreateOfficeCommand : IRequest<OfficeEntity>
 {
-    public Guid Id { get; set; }
     public string City { get; set; } = string.Empty;
     public string Street { get; set; } = string.Empty;
     public string HouseNumber { get; set; } = string.Empty;

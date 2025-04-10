@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Offices.Application.Commands.OfficeCommands.Delete;
+namespace Offices.Application.Offices.UseCases.Delete;
 
 public sealed class DeleteOfficeCommand : IRequest
 {

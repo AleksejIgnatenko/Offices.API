@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Offices.Core.Models;
+using Offices.Application.Offices.Models;
 
 namespace Offices.DataAccess.Context;
 

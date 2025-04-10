@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using Offices.Core.Models;
+using Offices.Application.Offices.Models;
 using Offices.DataAccess.Repositories;
 
-namespace Offices.Application.Commands.OfficeCommands.Update;
+namespace Offices.Application.Offices.UseCases.Update;
 
-public sealed class UpdateOfficeCommandHandle(IOfficeRepository officeRepository) : IRequestHandler<UpdateOfficeCommand, OfficeEntity>
+public sealed class UpdateOfficeHandler(IOfficeRepository officeRepository) : IRequestHandler<UpdateOfficeCommand, OfficeEntity>
 {
     public async Task<OfficeEntity> Handle(UpdateOfficeCommand request, CancellationToken cancellationToken)
     {

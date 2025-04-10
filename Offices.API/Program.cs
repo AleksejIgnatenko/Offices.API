@@ -1,11 +1,10 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Offices.Application.Commands.OfficeCommands.Create;
-using Offices.Application.Commands.OfficeCommands.Delete;
-using Offices.Application.Commands.OfficeCommands.Update;
-using Offices.Application.Queries.OfficeQueries.GetAll;
-using Offices.Application.Queries.OfficeQueries.GetById;
-using Offices.Core.Models;
+using Offices.API.Extensions;
+using Offices.Application.Offices.Models;
+using Offices.Application.Offices.UseCases.Create;
+using Offices.Application.Offices.UseCases.Delete;
+using Offices.Application.Offices.UseCases.GetAll;
 using Offices.DataAccess.Context;
 using Offices.DataAccess.Repositories;
 
@@ -21,11 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<OfficesDbContext>(opt => opt.UseInMemoryDatabase("Offices"));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
-builder.Services.AddScoped<IRequestHandler<CreateOfficeCommand, OfficeEntity>, CreateOfficeCommandHandler>();
-builder.Services.AddScoped<IRequestHandler<GetOfficeByIdQuery, OfficeEntity>, GetOfficeByIdQueryHandle>();
-builder.Services.AddScoped<IRequestHandler<GetAllOfficesQuery, IEnumerable<OfficeEntity>>, GetAllOfficesQueryHandle>();
-builder.Services.AddScoped<IRequestHandler<UpdateOfficeCommand, OfficeEntity>, UpdateOfficeCommandHandle>();
-builder.Services.AddScoped<IRequestHandler<DeleteOfficeCommand>, DeleteOfficeCommandHandle>();
+builder.Services.AddCQRSHandlers();
 
 builder.Services.AddScoped<IOfficeRepository, OfficeRepository>();
 

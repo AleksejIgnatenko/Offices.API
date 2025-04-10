@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using Offices.Core.Models;
+using Offices.Application.Offices.Models;
 using Offices.DataAccess.Repositories;
 
-namespace Offices.Application.Commands.OfficeCommands.Create;
+namespace Offices.Application.Offices.UseCases.Create;
 
-public sealed class CreateOfficeCommandHandler(IOfficeRepository officeRepository) : IRequestHandler<CreateOfficeCommand, OfficeEntity>
+public sealed class CreateOfficeHandler(IOfficeRepository officeRepository) : IRequestHandler<CreateOfficeCommand, OfficeEntity>
 {
     public async Task<OfficeEntity> Handle(CreateOfficeCommand request, CancellationToken cancellationToken)
     {

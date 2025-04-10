@@ -10,8 +10,4 @@
     <PackageReference Include="MediatR" Version="12.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Offices.Core\Offices.Core.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,9 +1,8 @@
-﻿using Offices.Core.Models;
-using Offices.DataAccess.Context;
+﻿using Offices.DataAccess.Context;
 
 namespace Offices.DataAccess.Repositories;
 
-public class RepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
+public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
     protected readonly OfficesDbContext _context;
 

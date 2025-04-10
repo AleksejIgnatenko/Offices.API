@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Offices.Application.Commands.OfficeCommands.Create;
-using Offices.Application.Commands.OfficeCommands.Delete;
-using Offices.Application.Commands.OfficeCommands.Update;
-using Offices.Application.Queries.OfficeQueries.GetAll;
-using Offices.Application.Queries.OfficeQueries.GetById;
+using Offices.Application.Offices.UseCases.Create;
+using Offices.Application.Offices.UseCases.Delete;
+using Offices.Application.Offices.UseCases.GetAll;
+using Offices.Application.Offices.UseCases.GetById;
+using Offices.Application.Offices.UseCases.Update;
 
 namespace Offices.API.Controllers;
 

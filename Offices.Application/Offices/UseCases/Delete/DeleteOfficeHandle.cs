@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Offices.DataAccess.Repositories;
 
-namespace Offices.Application.Commands.OfficeCommands.Delete;
+namespace Offices.Application.Offices.UseCases.Delete;
 
-public sealed class DeleteOfficeCommandHandle(IOfficeRepository officeRepository) : IRequestHandler<DeleteOfficeCommand>
+public sealed class DeleteOfficeHandle(IOfficeRepository officeRepository) : IRequestHandler<DeleteOfficeCommand>
 {
     public async Task Handle(DeleteOfficeCommand request, CancellationToken cancellationToken)
     {
